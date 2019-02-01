@@ -8,14 +8,15 @@ class energy_conversion(object):
 ################################################################################
 
     #Watts & Hours to Watt-Hour
-    def watt_hour_conversion(watts, time):
+    def watt_hour_conversion(watts,min):
         """This function takes Watts and a given Time frame and converts to Watt-Hours.
 
         watts: Unit of Power.
-        time: (in minutes) the timeframe that power is being transfered.
+        min: (in minutes) the timeframe that power is being transfered.
         """
-        hours = time/60
+        hours = min/60
         wH = watts * hours
+
         if watts < 1000:
             energy = 'The Watt-Hours are {}Wh'.format(wH)
         elif watts >=1000 and watts < 1000000:
@@ -37,7 +38,7 @@ class energy_conversion(object):
 ################################################################################
 
     #Cubic Feet to BTU or Therm
-    def BTU_Conversion(cf):
+    def btu_conversion(cf):
         """This function takes Cubic Feet of Natural Gas and converts them to British Thermal Units (BTU).
 
         cf (Cubic Feet): Cubic Feet of Natural Gas.
@@ -50,7 +51,7 @@ class energy_conversion(object):
             mmBTU = "Million BTU's(mmBTU): {}".format(btu/1000000)
             return mmBTU
 
-    def Cubic_Feet_Conversion(BTU):
+    def cubic_feet_conversion(BTU):
         """This function takes British Thermal Units (BTU) of Natural Gas and converts them to Cubic Feet of Natural Gas.
 
         BTU: British Thermal Units of Natural Gas.
@@ -68,7 +69,7 @@ class energy_conversion(object):
             Comma_Cubic_Feet = "Thousand Cubic Feet (McF): {}".format(CubicFt)
             return Comma_Cubic_Feet
 
-    def Therm_Conversion(BTU):
+    def therm_conversion(BTU):
         """This function takes British Thermal Units (BTU) of Natural Gas and converts them to Therms of Natural Gas.
 
         BTU: British Thermal Units of Natural Gas.
